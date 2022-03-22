@@ -6,7 +6,7 @@ function App() {
 	return (
 		<div>
 			<Circle borderColor="tomato" bgColor="teal" />
-			<Circle bgColor="pink" />
+			<Circle bgColor="pink" text="hi im props" />
     </div>
 	);
 }

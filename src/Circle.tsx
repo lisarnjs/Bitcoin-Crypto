@@ -12,15 +12,20 @@ height: 200px;
 background-color: ${props => props.bgColor};
 border-radius: 100px;
 border: 1px solid ${props => props.borderColor};
+text-align: center;
 `;
 
 interface CircleProps {
   bgColor: string; // required
-  borderColor?: string; // optional
+  borderColor?: string; // optional (= borderColor: string | undefined)
+  text?:string;
 }
 
-function Circle({ bgColor, borderColor }: CircleProps) {
-  return <Container bgColor={bgColor} borderColor={borderColor ?? "yellow"} /> // borderColor 초기값 설정 
+function Circle({ bgColor, borderColor, text = "default text" }: CircleProps) {
+  // borderColor 초기값 설정 (여기서는 yellow가 borderColor의 초기값이 되는거임) 
+  return <Container bgColor={bgColor} borderColor={borderColor ?? "yellow"} > 
+    {text}
+  </Container>
 }
 
 export default Circle;
