@@ -1,5 +1,4 @@
-import styled, { keyframes } from "styled-components";
-import "./App.css";
+import styled from "styled-components";
 import Circle from "./Circle";
 
 function App() {
@@ -12,3 +11,6 @@ function App() {
 }
 
 export default App;
+
+
+

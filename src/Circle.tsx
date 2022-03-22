@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 // interface => object가 어떤식으로 보일 지 설명
@@ -11,7 +12,7 @@ width: 200px;
 height: 200px;
 background-color: ${props => props.bgColor};
 border-radius: 100px;
-border: 1px solid ${props => props.borderColor};
+border: 3px solid ${props => props.borderColor};
 text-align: center;
 `;
 
@@ -23,7 +24,7 @@ interface CircleProps {
 
 function Circle({ bgColor, borderColor, text = "default text" }: CircleProps) {
   // borderColor 초기값 설정 (여기서는 yellow가 borderColor의 초기값이 되는거임) 
-  return <Container bgColor={bgColor} borderColor={borderColor ?? "yellow"} > 
+  return <Container bgColor={bgColor} borderColor={borderColor ?? "yellow"}> 
     {text}
   </Container>
 }
