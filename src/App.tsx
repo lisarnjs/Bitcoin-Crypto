@@ -8,10 +8,22 @@ const H1 = styled.h1`
 	color: ${props => props.theme.textColor};
 `;
 
+interface DummyProps {
+	text?: string;
+}
+
+function Dummy({text = "bye"}: DummyProps) {
+	return <H1>{text}</H1>
+}
+
 function App() {
+	const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+		console.log(event);
+	}
 	return (
 		<Container>
-			<H1>Protected</H1>
+			<Dummy text="hello"  />
+			<button onClick={onClick}>click me</button>
     </Container>
 	);
 }
