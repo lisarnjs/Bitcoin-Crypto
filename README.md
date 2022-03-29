@@ -1,7 +1,8 @@
 # Using package
 - Typescript
-- Styled components
-- React Router
+- styled components
+- react-router-dom@5.3.0
+- react-query
 ---
 # Getting Started with Create React App
 
