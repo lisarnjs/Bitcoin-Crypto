@@ -13,6 +13,7 @@ import styled from "styled-components";
 import { fetchCoinInfo, fetchCoinTickers } from "../api";
 import Chart from "./Chart";
 import Price from "./Price";
+import Coins from "./Coins";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -21,6 +22,7 @@ const Container = styled.div`
 `;
 
 const Header = styled.header`
+  position: relative;
   height: 10vh;
   display: flex;
   justify-content: center;
@@ -78,6 +80,12 @@ const Tab = styled.span<{ isActive: boolean }>`
   a {
     display: block;
   }
+`;
+
+const BackTab = styled.div`
+  position: absolute;
+  top: 45%;
+  left: 0;
 `;
 
 interface RouteParams {
@@ -194,6 +202,9 @@ function Coin() {
         </title>
       </Helmet>
       <Header>
+        <BackTab>
+          <Link to={`/`}>&lt; Back</Link>
+        </BackTab>
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
@@ -243,6 +254,9 @@ function Coin() {
             </Route>
             <Route path={`/:coinId/chart`}>
               <Chart coinId={coinId} />
+            </Route>
+            <Route path={`/`}>
+              <Coins />
             </Route>
           </Switch>
         </>
